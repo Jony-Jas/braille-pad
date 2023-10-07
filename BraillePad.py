@@ -48,7 +48,7 @@ def rotate(pin, angle):
         
 def run(brailleCode):
     while True:
-        positions = [[(0, 1), (0, 1), (0, 1)],[(1, 0), (1, 0), (1, 0)]]
+        #positions = [[(0, 1), (0, 1), (0, 1)],[(1, 0), (1, 0), (1, 0)]]
         positions = brailleCode
         
         for i in range(len(positions)):
