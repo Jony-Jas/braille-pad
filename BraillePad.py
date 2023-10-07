@@ -14,45 +14,50 @@ def rotate(pin, angle):
     print(pin, angle)
 
     if pin == 2:
-        if(angle == 0):
+        if(angle == 1):
             s1.angle = 0
         else:
             s1.angle = 90
     elif pin == 3:
-        if(angle == 0):
+        if(angle == 1):
             s2.angle = 0
         else:
             s2.angle = 90
     elif pin == 4:
-        if(angle == 0):
+        if(angle == 1):
             s3.angle = 0
         else:
             s3.angle = 90
     elif pin == 5:
-        if(angle == 0):
+        if(angle == 1):
             s4.angle = 0
         else:
             s4.angle = 90
     elif pin == 6:
-        if(angle == 0):
+        if(angle == 1):
             s5.angle = 0
         else:
             s5.angle = 90
     elif pin == 7:
-        if(angle == 0):
+        if(angle == 1):
             s6.angle = 0
         else:
             s6.angle = 90
     else:
         return
-
-while True:
-    positions = [(1, 1), (0, 1), (0, 0)]
-
-    pin = 2
-    for pos in positions:
-        rotate(pin, pos[0])
-        pin += 1
-        rotate(pin, pos[1])
-        pin += 1
-    sleep(2)
+        
+def run(brailleCode):
+    while True:
+        positions = [[(0, 1), (0, 1), (0, 1)],[(1, 0), (1, 0), (1, 0)]]
+        positions = brailleCode
+        
+        for i in range(len(positions)):
+            pin = 2
+            for pos in positions[i]:
+                rotate(pin, int(pos[0]))
+                pin += 1
+                rotate(pin, int(pos[1]))
+                pin += 1
+            sleep(3)
+            
+#run([[(0, 1), (0, 1), (0, 1)],[(1, 0), (1, 0), (1, 0)]])
