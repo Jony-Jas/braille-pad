@@ -59,5 +59,6 @@ def run(brailleCode):
                 rotate(pin, int(pos[1]))
                 pin += 1
             sleep(3)
+        break;
             
 #run([[(0, 1), (0, 1), (0, 1)],[(1, 0), (1, 0), (1, 0)]])
