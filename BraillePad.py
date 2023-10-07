@@ -1,36 +1,58 @@
-from gpiozero import Servo
+from gpiozero import AngularServo
 from time import sleep
 
 # Define servo objects for each servo
-s1 = Servo(2)
-s2 = Servo(3)
-s3 = Servo(4)
-s4 = Servo(5)
-s5 = Servo(6)
-s6 = Servo(7)
+s1 = AngularServo(2,min_pulse_width=0.0006,max_pulse_width=0.0023)
+s2 = AngularServo(3,min_pulse_width=0.0006,max_pulse_width=0.0023)
+s3 = AngularServo(4,min_pulse_width=0.0006,max_pulse_width=0.0023)
+s4 = AngularServo(5,min_pulse_width=0.0006,max_pulse_width=0.0023)
+s5 = AngularServo(6,min_pulse_width=0.0006,max_pulse_width=0.0023)
+s6 = AngularServo(7,min_pulse_width=0.0006,max_pulse_width=0.0023)
 
-def rotate(servo, angle):
-    # Convert the angle from 0-90 to -1 to 1 (gpiozero servo range)
-    servo.value = (angle / 90.0) * 2 - 1
 
-# Main setup
-# for servo in [s1, s2, s3, s4, s5, s6]:
-#     servo.min()
-#     sleep(1)
+def rotate(pin, angle):
+    print(pin, angle)
 
-# for servo in [s1, s2, s3, s4, s5, s6]:
-#     servo.max()
-#     sleep(1)
+    if pin == 2:
+        if(angle == 0):
+            s1.angle = 0
+        else:
+            s1.angle = 90
+    elif pin == 3:
+        if(angle == 0):
+            s2.angle = 0
+        else:
+            s2.angle = 90
+    elif pin == 4:
+        if(angle == 0):
+            s3.angle = 0
+        else:
+            s3.angle = 90
+    elif pin == 5:
+        if(angle == 0):
+            s4.angle = 0
+        else:
+            s4.angle = 90
+    elif pin == 6:
+        if(angle == 0):
+            s5.angle = 0
+        else:
+            s5.angle = 90
+    elif pin == 7:
+        if(angle == 0):
+            s6.angle = 0
+        else:
+            s6.angle = 90
+    else:
+        return
 
-# Loop
 while True:
     positions = [(1, 1), (0, 1), (0, 0)]
 
     pin = 2
     for pos in positions:
-        rotate(s1, pos[0] * 90)
+        rotate(pin, pos[0])
         pin += 1
-        rotate(s2, pos[1] * 90)
+        rotate(pin, pos[1])
         pin += 1
-
     sleep(2)
