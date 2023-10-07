@@ -14,13 +14,13 @@ def rotate(servo, angle):
     servo.value = (angle / 90.0) * 2 - 1
 
 # Main setup
-for servo in [s1, s2, s3, s4, s5, s6]:
-    servo.min()
-    sleep(1)
+# for servo in [s1, s2, s3, s4, s5, s6]:
+#     servo.min()
+#     sleep(1)
 
-for servo in [s1, s2, s3, s4, s5, s6]:
-    servo.max()
-    sleep(1)
+# for servo in [s1, s2, s3, s4, s5, s6]:
+#     servo.max()
+#     sleep(1)
 
 # Loop
 while True:
