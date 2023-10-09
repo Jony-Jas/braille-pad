@@ -26,7 +26,7 @@ braille_dict = {
         'x': '110011',
         'y': '110111',
         'z': '100111',
-        ' ': '000000',
+        ' ': '111111',
     }
 
 def generateBrailleCode(text):
