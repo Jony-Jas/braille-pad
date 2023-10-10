@@ -9,6 +9,22 @@ s4 = AngularServo(5,min_pulse_width=0.0006,max_pulse_width=0.0023)
 s5 = AngularServo(6,min_pulse_width=0.0006,max_pulse_width=0.0023)
 s6 = AngularServo(7,min_pulse_width=0.0006,max_pulse_width=0.0023)
 
+s1.angle = -90
+s2.angle = 0
+s3.angle = 0
+s4.angle = -90
+s5.angle = -90
+s6.angle = -90
+sleep(3)
+s1.angle = 0
+s2.angle = 90
+s3.angle = 90
+s4.angle = 0
+s5.angle = 0
+s6.angle = 0
+sleep(3)
+
+
 def rotate(pin, angle):
     print(pin, angle)
 
@@ -59,4 +75,3 @@ def run(brailleCode):
             sleep(5)
         break;
             
-#run([[(0, 0), (0, 0), (0, 0)],[(1, 1), (1, 1), (1, 1)]])
